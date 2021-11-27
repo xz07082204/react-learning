@@ -1,0 +1,9 @@
+手动保存状态
+配合 React 组件的 componentWillUnmount 生命周期通过dva、 redux 之类的数据流管理工具对数据进行保存，通过 componentDidMount 周期进行数据恢复。
+这种方法需要每次手动保存与恢复数据，并且像我们自己封装的列表组件，数据的请求和渲染都是在组件上进行的，这就导致在项目没办法保存与恢复数据
+自动保存状态
+react-live-route	实现成本也比较高，需要注意对原始 功能的保存，以及多个 react-router 版本的兼容
+react-keeper	完全替换掉路由方案是一个风险较大的事情，需要较为慎重地考虑
+react-keep-alive	真实 KeepAlive 功能的实现
+react-router-cache-route	由于不再是组件卸载，所以和 TransitionGroup 配合得不好，导致转场动画难以实现
+react-activation	其 children 属性抽取出来，渲染到一个不会被卸载的组件内
